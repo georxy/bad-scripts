@@ -14,11 +14,13 @@ kw3 = ("contribute-a", "Guest Post", "paid-blog")
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 output = []
 
-df = pd.read_csv(desktop + "/" + 'test_wf.csv')
+file_test = desktop + "/" + input("Enter the file name ") + ".csv"
+
+df = pd.read_csv(file_test)
 
 time1 = time.time()
 try:
-    with open(desktop + "/" + 'test_wf.csv') as file_obj:
+    with open(file_test) as file_obj:
         heading = next(file_obj)
         reader_obj = csv.reader(file_obj)
         for row in reader_obj:
