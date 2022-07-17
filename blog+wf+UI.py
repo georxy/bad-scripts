@@ -182,9 +182,10 @@ def rand_joke():
 
 btt1 = Button(root, text="Start 'Write for us' check", command=click_wfs, font=("Arial", 12))
 btt2 = Button(root, text="Start Blog check", command=click_blog, font=("Arial", 12))
+
 e = Entry(borderwidth=6, font=("Arial", 14))
 e.pack()
-x = e.get()
+
 btt1.pack()
 btt2.pack()
 chance = randint(1, 6)
