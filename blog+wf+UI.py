@@ -16,7 +16,7 @@ root.geometry('600x400')
 
 def click_wfs():
     time1 = time.time()
-    lbl = Label(root, text="Results for '" + e.get() + ".csv' are in file 'output.csv'")
+    lbl = Label(root, text="Results for '" + e.get() + ".csv' are in file 'output_wfs.csv'")
     fName = e.get()
     lbl.pack()
     kw1 = ("write-for", "guest-post", "guest-article", "partner-article", "sponsored-post", "submit-guest")
@@ -62,7 +62,7 @@ def click_wfs():
 
         df["Test result"] = output
         output.append(row)
-        df.to_csv(desktop + "/output.csv", index=False)  # writing to new csv file "output"
+        df.to_csv(desktop + "/output_wfs.csv", index=False)  # writing to new csv file "output"
     except:
         Label(root, text="I fucked up").pack()
     finally:
@@ -73,13 +73,12 @@ def click_wfs():
 
 
 def click_blog():
-    lbl = Label(root, text="Results for '" + e.get() + ".csv' are in file 'output.csv'")
+    lbl = Label(root, text="Results for '" + e.get() + ".csv' are in file 'output_blog.csv'")
     fName = e.get()
     lbl.pack()
     kw1 = ("write-for", "guest-post", "guest-article", "submit-article", "sponsored-post", "submit-guest")
     kw2 = ("submit-news", "become-a-contributor", "content-submission", "submit-your-news", "submit-article")
     kw3 = ("advertise", "Blog", "Article", "advertising")  # advertise
-    # kw4 = ("blog", "read more", "Read more", "Read More", "post")
     # kw - tuples with keyword for search on target page
 
     output = []
@@ -130,7 +129,7 @@ def click_blog():
         output.append(row)
 
         df = df[df.Test_result != "Not blog"]
-        df.to_csv(desktop + "/output.csv", index=False)  # writing to new csv file "output"
+        df.to_csv(desktop + "/output_blog.csv", index=False)  # writing to new csv file "output"
     except:
         Label(root, text="I fucked up").pack()
     finally:
