@@ -8,7 +8,7 @@ import pandas as pd
 
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 
-action = input("What to do? (W for write for us, B for blog filer) ")
+action = input("What to do? (W for write for us, B for blog filter) ")
 
 
 
