@@ -188,7 +188,6 @@ x = e.get()
 btt1.pack()
 btt2.pack()
 chance = randint(1, 6)
-print(chance)
 if chance == 1:
     rand_joke()
 else:
