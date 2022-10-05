@@ -10,7 +10,7 @@ import email_scrape as ems
 import write_for_us_script as wfs
 import check_blog as cbg
 import blogs_with_emails as bwe
-import niche_check as nc
+import niche_check_upd as nc
 import most_used_words as muk
 
 root = Tk()
