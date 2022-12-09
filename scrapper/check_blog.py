@@ -113,7 +113,7 @@ def check_blog(fname):
 
     async def main():
         ssl_context = ssl.create_default_context(cafile=certifi.where())
-        my_conn = aiohttp.TCPConnector(ssl=ssl_context, limit=80)
+        my_conn = aiohttp.TCPConnector(ssl=ssl_context)
         async with aiohttp.ClientSession(connector=my_conn) as session:
             url_list = []
             with open(file_test, encoding='utf-8') as file_obj:
@@ -126,6 +126,7 @@ def check_blog(fname):
             for i in range(len(url_list)):
                 url = f'https://{url_list[i]}/'
                 tasks.append(asyncio.ensure_future(get_html(session, url)))
+                await asyncio.sleep(0.04)
 
             html_tasks = await asyncio.gather(*tasks)
             for task in html_tasks:
