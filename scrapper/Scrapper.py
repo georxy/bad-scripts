@@ -37,7 +37,7 @@ def avg_analysis_speed(time_start, time_end, f_name):
     sites_analyzed = len(df)
     time_spent = time_end - time_start
     avg_speed = round(sites_analyzed/time_spent, 2)
-    spd_text = f"avg analysis speed is {avg_speed} sites per seconds"
+    spd_text = f"avg analysis speed is {avg_speed} sites per second"
     spd_label = Label(root, text=spd_text, font=("Arial", 10), justify=LEFT)
     spd_label.grid(row=0, column=1)
 
